@@ -32,7 +32,7 @@ export function HomePage () {
 
               { formElements.map((el: FormElement, index) => {
                 return (
-                  <Link to={"forms/" + el.id}>
+                  <Link key={index} to={"forms/" + el.id}>
                     <Card key={index}>
                       <CardHeader>
                         <CardTitle>Example {index + 1}</CardTitle>
