@@ -18,7 +18,7 @@ pnpm install
 
 To run local server on specific port and with specific base path, first copy `.env.example` to `.env` file and change variable values.
 
-- PORT is for custom server port, default is "3001"
+- PORT is for custom server port, default is "3000"
 - BASE_PATH is for APIs path prefix, default is "/api"
 
 ## Development
@@ -29,7 +29,7 @@ To run local server use `pnpm dev` from the top-level package folder or run it s
 pnpm --filter formstack dev
 ```
 
-By default APIs available at <http://localhost:3001/api/forms>
+By default APIs available at <http://localhost:3000/api/forms>
 
 - GET /api/forms
 - POST /api/forms

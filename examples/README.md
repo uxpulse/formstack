@@ -14,7 +14,7 @@ pnpm install
 
 To setup custom proxy for the Form Stack server function, so APIs will be accessible from the application URL like <http://localhost:8080/api/forms> you need to copy `.env.example` to `.env` file.
 
-- VITE_SERVER_URL is the server endpoint which is used in `packages/formstack`, default is <http://localhost:3001>
+- VITE_SERVER_URL is the server endpoint which is used in `packages/formstack`, default is <http://localhost:3000>
 - VITE_SERVER_API_PATH is the APIs path, default is "/api/forms"
 
 ## Development

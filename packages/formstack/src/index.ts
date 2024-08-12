@@ -3,11 +3,6 @@ import cors from "cors";
 import express from "express";
 import "express-async-errors";
 
-// Vercel Functions
-export const config = {
-  runtime: "edge",
-};
-
 const PORT = process.env.PORT || 3001;
 const BASE_PATH = process.env.BASE_PATH || "/api";
 
