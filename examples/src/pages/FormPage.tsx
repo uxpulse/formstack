@@ -13,7 +13,7 @@ interface PageProps {
 const FormPage: FC<PageProps> = ({ children }) => {
   return (
     <div className="flex flex-col flex-1 min-h-screen">
-      <header className="w-full h-24 py-8 px-10 bg-card-foreground">
+      <header className="w-full py-6 px-10 bg-card-foreground">
         <div className="mx-auto max-w-6xl">
           <Link to="/">
             <Button variant="outline">

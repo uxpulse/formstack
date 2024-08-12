@@ -11,29 +11,52 @@ import {
   CardTitle,
 } from "@components/ui/card"
 
+import PlaceholderImage from "@assets/placeholder.svg"
+
 export function HomePage () {
   return (
     <div className="flex flex-col flex-1 min-h-screen">
-      <header className="w-full h-24 py-8 px-10 bg-card-foreground">
-        <section className="mx-auto max-w-6xl text-slate-100">Home Page</section>
+      <header className="w-full py-6 px-10 bg-card-foreground">
+
+        <section className="flex items-center mx-auto max-w-6xl gap-6">
+          <div className="text-slate-100">
+            Home Page
+          </div>
+        </section>
+
       </header>
-      <main className="mx-auto max-w-6xl my-8">
-        <div className="flex gap-6">
-          { formElements.map((el: FormElement, index) => {
-            return (
-              <Link to={"forms/" + el.id}>
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle>Example {index + 1}</CardTitle>
-                    <CardDescription>{el.title}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    ...
-                  </CardContent>
-                </Card>
-              </Link>
-            )
-          }) }
+      <main className="flex flex-1">
+        <div className="w-full lg:grid lg:grid-cols-5">
+          <div className="py-10 lg:col-span-3">
+            <div className="flex flex-col w-full px-8 gap-6 max-w-lg mx-auto">
+
+              { formElements.map((el: FormElement, index) => {
+                return (
+                  <Link to={"forms/" + el.id}>
+                    <Card key={index}>
+                      <CardHeader>
+                        <CardTitle>Example {index + 1}</CardTitle>
+                        <CardDescription>{el.title}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        ...
+                      </CardContent>
+                    </Card>
+                  </Link>
+                )
+              }) }
+
+            </div>
+          </div>
+          <div className="hidden bg-muted lg:block lg:col-span-2">
+            <img
+              src={PlaceholderImage}
+              alt="Image"
+              width="1920"
+              height="1080"
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </main>
     </div>

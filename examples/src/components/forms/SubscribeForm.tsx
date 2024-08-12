@@ -17,6 +17,7 @@ import {
 
 import PlaceholderImage from '@assets/placeholder.svg'
 
+const FORM_ID = "subscribe"
 const formSchema = z.object({
   email: z.string().min(1, {
     message: "Email is required",
@@ -26,18 +27,28 @@ const formSchema = z.object({
 })
 
 export function MultistepForm() {
-  // Define form
+  // Define subscription form
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
     },
   })
- 
-  // Define a submit handler
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values
-    console.log(values)
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Check form data if needed
+    const request = JSON.stringify(values);
+
+    const response = await fetch(`/api/forms?formId=${FORM_ID}`, {
+        method: 'POST',
+        body: request,
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      }
+    )
+    const data = await response.json();
+    console.log(data);
   }
 
   return (
@@ -50,7 +61,7 @@ export function MultistepForm() {
               Subscribe to our newsletter.
             </p>
           </div>
-          <div className="grid gap-4 w-full max-w-lg mx-auto">
+          <div className="grid gap-3 w-full max-w-lg mx-auto">
         
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

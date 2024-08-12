@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter examples dev",
+    "dev": "pnpm --stream -r dev",
+    "build:formstack": "pnpm --filter formstack tsc",
+    "start:formstack": "pnpm --filter formstack dev",
+    "start:examples": "pnpm --filter examples dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
