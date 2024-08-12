@@ -26,11 +26,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(BASE_PATH, formsRouter);
 app.use(errorHandler);
 
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
-const initServer = async () => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}
-
-initServer();
+// Export the Express
+module.exports = app;
