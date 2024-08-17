@@ -4,6 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
+// Specific form config
+import { subscribeFormSchema } from "../../../formstack.config"
+
 import { Button } from "@components/ui/button"
 import { Input } from "@components/ui/input"
 import {
@@ -17,29 +20,20 @@ import {
 
 import PlaceholderImage from '@assets/placeholder.svg'
 
-const FORM_ID = "subscribe"
-const formSchema = z.object({
-  email: z.string().min(1, {
-    message: "Email is required",
-  }).email({
-    message: "Invalid email address"
-  })
-})
-
-export function MultistepForm() {
+export function SubscribeForm() {
   // Define subscription form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof subscribeFormSchema.formSchema>>({
+    resolver: zodResolver(subscribeFormSchema.formSchema),
     defaultValues: {
       email: "",
     },
   })
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof subscribeFormSchema.formSchema>) {
     // Check form data if needed
     const request = JSON.stringify(values);
 
-    const response = await fetch(`/api/forms?formId=${FORM_ID}`, {
+    const response = await fetch(`/api/forms?formId=${subscribeFormSchema.id}`, {
         method: 'POST',
         body: request,
         headers: {
@@ -102,4 +96,4 @@ export function MultistepForm() {
   )
 }
 
-export default MultistepForm
+export default SubscribeForm

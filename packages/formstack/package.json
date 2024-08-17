@@ -4,27 +4,21 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon"
-  },
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "exec": "tsc && node ./dist/index.js",
-    "ext": "ts,js,json"
+    "dev": "tsx watch --inspect ./src/index.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/node": "^22.2.0",
-    "nodemon": "^3.1.4",
+    "tsx": "^4.17.0",
     "typescript": "^5.5.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "zod": "^3.23.8"
   },
   "packageManager": "pnpm@9.4.0"
 }
