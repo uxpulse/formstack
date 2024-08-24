@@ -2,9 +2,9 @@ import { Request, Response, Router } from "express";
 import BadRequestError from "../middlewares/badRequestError"
 
 // Import specific form schemas
-import config, { FormSchema } from "../../../../examples/formstack.config"
+import config, { FormSchema } from "../formstack.config"
 
-const router = Router()
+const router: Router = Router()
 
 /* Confirm existing forms posted by user */
 const getHandler = async (req: Request, res: Response) => {

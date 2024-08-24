@@ -5,9 +5,9 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "baseUrl": ".",
 
     /* Aliases */
-    "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
       "@pages/*": ["./src/pages/*"],

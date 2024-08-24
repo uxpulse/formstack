@@ -6,9 +6,9 @@ import path from "path"
 export default defineConfig((env) => {
   const envars = loadEnv(env.mode, "./")
 
-  const serverAPIPath = envars.VITE_SERVER_API_PATH ?? "/api/forms"
+  const serverAPIPath = envars.VITE_SERVER_API_PATH || "/api/forms"
   const serverURL = new URL(
-    envars.VITE_SERVER_URL ?? "<http://localhost:3000>"
+    envars.VITE_SERVER_URL || "http://127.0.0.1:3000"
   )
 
   return {

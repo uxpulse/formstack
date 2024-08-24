@@ -1,17 +1,18 @@
 {
-  "name": "@uxpulse/formstack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "formstack",
+  "private": true,
   "scripts": {
-    "dev": "pnpm --stream -r dev",
-    "build:formstack": "pnpm --filter formstack tsc",
-    "start:formstack": "pnpm --filter formstack dev",
-    "start:examples": "pnpm --filter examples dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.14"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@9.4.0"
 }

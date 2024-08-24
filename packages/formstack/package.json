@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "main": "src/index.ts",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsx watch --inspect ./src/index.ts"
+    "dev": "tsx watch --inspect ./src/index.ts",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
