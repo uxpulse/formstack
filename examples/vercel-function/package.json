@@ -1,0 +1,19 @@
+{
+  "name": "vercel-function",
+  "description": "Standalone Vercel function with Form Stack",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "vercel dev",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "vercel": "^37.1.1"
+  },
+  "dependencies": {
+    "formstack": "workspace:*",
+    "hono": "^4.5.8",
+    "next": "^14.2.6"
+  },
+  "packageManager": "pnpm@9.4.0"
+}

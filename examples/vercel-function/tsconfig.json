@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+
+    /* Paths */
+    "outDir": "dist"
+  },
+  "include": ["api/**/*.ts"],
+  "exclude": ["dist", "node_modules", "**/*.spec.ts"]
+}

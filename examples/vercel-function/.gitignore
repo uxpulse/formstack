@@ -1,0 +1,21 @@
+# Logs
+logs
+*.log
+pnpm-debug.log*
+
+node_modules/
+*.local
+dist
+
+# Environent
+.env*
+!.env.example
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.cache
+.DS_Store
+.vercel
